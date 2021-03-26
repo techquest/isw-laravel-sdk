@@ -1,0 +1,19 @@
+{
+    "name": "interswitch/laravel-interswitch",
+    "description": "This package simplifies the integration of Quickteller Business",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Interswitch",
+            "email": "support@interswitchgroup.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Interswitch\\Interswitch\\":"src/"
+        }
+    }
+}

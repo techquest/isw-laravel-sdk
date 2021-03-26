@@ -105,7 +105,7 @@ To go live, switch to the live environment on your Quickteller Business dashboar
 INTERSWITCH_ENV=LIVE
 ```
 
- ## License
+ ## License 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 

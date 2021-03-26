@@ -1,8 +1,8 @@
 # laravel-interswitch
 
-[![Issues](	https://img.shields.io/github/issues/toyosi12/laravel-interswitch)](https://github.com/techquest/isw-laravel-sdk/issues)
-[![Forks](	https://img.shields.io/github/forks/toyosi12/laravel-interswitch)](https://github.com/techquest/isw-laravel-sdk/network/members)
-[![Stars](	https://img.shields.io/github/stars/toyosi12/laravel-interswitch)](https://github.com/techquest/isw-laravel-sdk/stargazers)
+[![Issues](	https://img.shields.io/github/issues/techquest/isw-laravel-sdk)](https://github.com/techquest/isw-laravel-sdk/issues)
+[![Forks](	https://img.shields.io/github/forks/techquest/isw-laravel-sdk)](https://github.com/techquest/isw-laravel-sdk/network/members)
+[![Stars](	https://img.shields.io/github/stars/techquest/isw-laravel-sdk)](https://github.com/techquest/isw-laravel-sdk/stargazers)
 
 > Interswitch's official laravel package to easily integrate to Quickteller Business to collect payments
 

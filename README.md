@@ -40,8 +40,8 @@ The payment flow is described below:
 ### 1. Open .env and add:
 ```php
 INTERSWITCH_REDIRECT_URL="${APP_URL}/response"
-INTERSWITCH_PAY_ITEM_ID = 
-INTERSWITCH_MERCHANT_CODE = 
+INTERSWITCH_PAY_ITEM_ID= 
+INTERSWITCH_MERCHANT_CODE= 
 ```
 'response' as indicated above could be anything. 
 The specified value indicates the url the user is redirected to after every transaction.

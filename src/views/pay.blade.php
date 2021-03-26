@@ -10,7 +10,8 @@
 
 <body onload="document.interswitchForm.submit()">
     <h4>Loading...</h4>
-    <form action="{{ $transactionData['initializationURL'] }}" method="post" name="interswitchForm">
+    <form action="{{ $transactionData['initializationURL'] }}" method="post" name="interswitchForm"
+        style="display:none">
         <input name="site_redirect_url" value="{{ $transactionData['callbackURL'] }}" />
         <input name="pay_item_id" value="{{ $transactionData['payItemID'] }}" />
         <input name="txn_ref" value="{{ $transactionData['transactionReference'] }}" />
@@ -20,8 +21,6 @@
         <input name="pay_item_name" value="{{ $transactionData['payItemName'] }}" />
         <input name="display_mode" value="PAGE" />
         <input name="merchant_code" value="{{ $transactionData['merchantCode'] }}" />
-
-        <button type="submit">Submit</button>
     </form>
 </body>
 

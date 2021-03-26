@@ -57,7 +57,6 @@
       */
      private $merchantCode;
 
-     
 
      public function __construct()
      {

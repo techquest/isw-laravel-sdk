@@ -57,6 +57,8 @@
       */
      private $merchantCode;
 
+     
+
      public function __construct()
      {
          $this->env = config('interswitch.env');

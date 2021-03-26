@@ -15,5 +15,15 @@
         "psr-4": {
             "Interswitch\\Interswitch\\":"src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Interswitch\\Interswitch\\InterswitchServiceProvider"
+            ],
+            "aliases": {
+                "Interswitch": "Interswitch\\Interswitch\\Facade\\Interswitch"
+            }
+        }
     }
 }

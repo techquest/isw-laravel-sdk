@@ -17,7 +17,7 @@
          $this->mergeConfigFrom(__DIR__ . '/config/interswitch.php', 'interswitch');
 
          $this->publishes([
-             __DIR__ . '/../config/interswitch.php' => config_path('interswitch.php')
+             __DIR__ . '/config/interswitch.php' => config_path('interswitch.php')
          ]);
      }
 

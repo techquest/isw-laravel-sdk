@@ -47,8 +47,8 @@ INTERSWITCH_MERCHANT_CODE=
 The specified value indicates the url the user is redirected to after every transaction.
 Don't forget to add this route in your project. In this case, it will be:
 ```php
- Route::post('response', function(){
-  return $_POST;
+ Route::get('response', function(){
+  return $_GET;
  });
 ```
 

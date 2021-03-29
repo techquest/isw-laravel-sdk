@@ -94,38 +94,7 @@
             'accessToken' => isset($request->accessToken) ? $request->accessToken : 'false'
          ];
 
-         $curlFields = [
-             'site_redirect_url' => $transactionData['callbackURL'],
-             'pay_item_id' => $transactionData['payItemID'],
-             'txn_ref' => $transactionData['transactionReference'],
-             'amount' => $transactionData['amount'],
-             'currency' => $transactionData['currency'],
-             'cust_name' => $transactionData['customerName'],
-             'cust_email' => $transactionData['customerEmail'],
-             'cust_id' => $transactionData['customerID'],
-             'pay_item_name' => $transactionData['payItemName'],
-             'merchant_code' => $transactionData['merchantCode'],
-             'tokenise_card' => $transactionData['tokeniseCard'],
-             'display_mode' => 'PAGE',
-         ];
-
-         
-         //  $curlString = http_build_query($curlFields);
-
-        //  $curl = curl_init();
-
-        //  curl_setopt($curl, CURLOPT_URL, $this->initializationURL);
-        //  curl_setopt($curl, CURLOPT_POST, true);
-        //  curl_setopt($curl, CURLOPT_POSTFIELDS, $curlString);
-        //  curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-        //    "Cache-Control: no-cache",
-        //  ));
-         
-        //  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        //  curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-         
-        //  $result = curl_exec($curl);
-        //  curl_close($curl);
+         return $transactionData;
      }
 
      public function queryTransaction($transactionDetails)

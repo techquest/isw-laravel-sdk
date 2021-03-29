@@ -33,7 +33,7 @@
          }
 
          $transactionData = Interswitch::initializeTransaction($request->all());
-         //return view('interswitch::pay', compact('transactionData'));
+         return view('interswitch::pay', compact('transactionData'));
      }
 
      public function callback()

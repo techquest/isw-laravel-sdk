@@ -16,10 +16,16 @@
      public function pay(Request $request)
      {
          $validator = Validator::make($request->all(), [
-             'payItemName' => 'required|string',
-             'amount' => 'required|gt:0|numeric',
-             'customerName' => 'required|string',
-             'customerID' => 'string'
+            'payItemName' => 'required|string',
+            'amount' => 'required|gt:0|numeric',
+            'customerName' => 'required|string',
+            'customerID' => 'string',
+            'customerEmail' => 'string',
+            'transactionReference' => 'string',
+            'tokeniseCard' => 'string',
+            'accessToken' => 'string',
+            'currency' => 'string'
+
          ]);
 
          if ($validator->fails()) {
@@ -27,8 +33,7 @@
          }
 
          $transactionData = Interswitch::initializeTransaction($request->all());
-
-         return view('interswitch::pay', compact('transactionData'));
+         //return view('interswitch::pay', compact('transactionData'));
      }
 
      public function callback()

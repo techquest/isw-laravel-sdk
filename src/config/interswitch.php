@@ -10,11 +10,6 @@
       */
 
       'env' => env('INTERSWITCH_ENV', 'TEST'),
-      
-     /**
-      * ISO 4217 code of the currency being used. Naira(566) is the default
-      */
-      'currency' => env('INTERSWITCH_CURRENCY', 566),
 
       /**
        * Redirect url after a successful transaction

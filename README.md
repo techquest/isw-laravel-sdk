@@ -33,6 +33,8 @@ The payment flow is described below:
 1. User clicks a button to make payment, the user is redirected to the payment page, usually by submitting a form with hidden fields.
 2. On the payment page, there are multiple payment options:
 - **Card Option:** The user enters card details and follows the prompt.
+- **Transfer(Virtual Accounts) Option:** The user can pay via a bank transfer either usin their financial/bank app or USSD to the dynamic account number displayed to complete the transaction.
+- **QR Option:** The user can scan the QR displayed on the payment page using their bank app to complete the transaction.
 - **USSD Option:** 
     - The user selects a bank
     - A USSD code is generated 
@@ -75,8 +77,6 @@ Don't forget to add this route in your project. In this case, it will be:
 To get your **INTERSWITCH_PAY_ITEM_ID** and **INTERSWITCH_MERCHANT_CODE**,
 visit https://business.quickteller.com/developertools
 
-
-### Test Environment
 
 #### Create payment route and view
 Create your payment route in web.php. Something like: 

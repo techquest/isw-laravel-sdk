@@ -18,9 +18,9 @@
          $validator = Validator::make($request->all(), [
             'payItemName' => 'required|string',
             'amount' => 'required|gt:0|numeric',
-            'customerName' => 'required|string',
+            'customerName' => 'string',
             'customerID' => 'string',
-            'customerEmail' => 'string',
+            'customerEmail' => 'required|string',
             'transactionReference' => 'string',
             'tokeniseCard' => 'string',
             'accessToken' => 'string',

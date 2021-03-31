@@ -117,11 +117,12 @@ The view can be like so:
 - This url will return the result of the transaction. Sample response will be like so:
 ```php
 {
-  "paymentReference": "FBN|WEB|CDEM|10-12-2020|383104",
-  "responseCode": "00",
-  "responseDescription": "Approved Successful",
-  "amount": "12000",
-  "transactionDate": "2020-12-10T15:59:37.827",
+paymentReference: "FBN|WEB|MX26070|31-03-2021|3511400|927085",
+responseCode: "00",
+responseDescription: "Approved by Financial Institution",
+amount: "15000",
+transactionDate: "2021-03-31T08:45:31",
+merchantReference: "y84KWu1617176725"
 }
 ```
 #### Note: #### 

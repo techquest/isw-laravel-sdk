@@ -82,7 +82,7 @@
             'transactionReference' => isset($request->transactionReference) ?  $request->transactionReference :  $this->generateTransactionReference(),
             'merchantCode' => $this->merchantCode,
             'payItemID' => $this->payItemID,
-            'payItemName' => $request->payItemName,
+            'payItemName' => isset($request->payItemName) ? $request->payItemName : '',
             'amount' => $request->amount,
             'callbackURL' => $this->callbackURL,
             'currency' => isset($request->currency) ? $request->currency : 566,

@@ -89,8 +89,7 @@ Then create the view. In this case, 'payment.blade.php'.
 The view can be like so:
 ```html
 <form action="interswitch-pay" method="post">
-    <input type="hidden" name="customerName" value="John Doe" />
-    <input type="hidden" name="payItemName" value="Suya" />
+    <input type="hidden" name="customerEmail" value="johndoe@nomail.com" />
     <input type="hidden" name="amount" value="15000" />
     <!-- Amount must be in kobo-->
     <button

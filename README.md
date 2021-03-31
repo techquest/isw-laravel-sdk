@@ -143,7 +143,7 @@ merchantReference: "y84KWu1617176725"
 - To get a list of test cards, visit:
  https://developer.interswitch.com/docs/quickteller-business/web-integrations/#test-cards
 
-
+#### Handling the response
 
 ### Live Environment
 To go live, switch to the live environment on your Quickteller Business dashboard by clicking the 'switch' button at the top right corner of the dashboard. Replace **INTERSWITCH_PAY_ITEM_ID** and **INTERSWITCH_MERCHANT_CODE** with the new values. Also add the following to **.env**:

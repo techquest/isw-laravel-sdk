@@ -16,7 +16,7 @@
      public function pay(Request $request)
      {
          $validator = Validator::make($request->all(), [
-            'payItemName' => 'required|string',
+            'payItemName' => 'string',
             'amount' => 'required|gt:0|numeric',
             'customerName' => 'string',
             'customerID' => 'string',

@@ -33,13 +33,13 @@ The payment flow is described below:
 1. User clicks a button to make payment, the user is redirected to the payment page, usually by submitting a form with hidden fields.
 2. On the payment page, there are multiple payment options:
 - **Card Option:** The user enters card details and follows the prompt.
-- **Transfer(Virtual Accounts) Option:** The user can pay via a bank transfer either usin their financial/bank app or USSD to the dynamic account number displayed to complete the transaction.
+- **Transfer(Virtual Accounts) Option:** The user can pay via a bank transfer either using their financial/bank app or USSD to the dynamic account number displayed to complete the transaction.
 - **QR Option:** The user can scan the QR displayed on the payment page using their bank app to complete the transaction.
 - **USSD Option:** 
     - The user selects a bank
     - A USSD code is generated 
     - User types the USSD code on their mobile device and follows the prompt. 
-- Verve Wallet: The user can login to their verve wallet if they have one
+- **Verve Wallet:** The user can login to their verve wallet if they have one
 3. The user gets a prompt indicating a successful or a failed transaction.
 
 ## Usage
@@ -123,8 +123,6 @@ The view can be like so:
   "responseDescription": "Approved Successful",
   "amount": "12000",
   "transactionDate": "2020-12-10T15:59:37.827",
-  "customerEmail": "johndoe@nomail.com",
-  "customerName": "John Doe"
 }
 ```
 #### Note: #### 

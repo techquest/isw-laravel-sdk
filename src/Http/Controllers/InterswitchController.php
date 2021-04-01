@@ -22,7 +22,7 @@
             'customerName' => 'string',
             'customerID' => 'string',
             'customerEmail' => 'required|string',
-            'transactionReference' => 'string',
+            'transactionReference' => 'required|string',
             'tokeniseCard' => 'string',
             'accessToken' => 'string',
             'currency' => 'string'

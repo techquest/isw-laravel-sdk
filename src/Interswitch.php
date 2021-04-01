@@ -79,7 +79,7 @@
      {
          $request = (object) $request;
          $transactionData =  [
-            'transactionReference' => isset($request->transactionReference) ?  $request->transactionReference :  $this->generateTransactionReference(),
+            'transactionReference' => $request->transactionReference,
             'merchantCode' => $this->merchantCode,
             'payItemID' => $this->payItemID,
             'payItemName' => isset($request->payItemName) ? $request->payItemName : null,
@@ -149,6 +149,9 @@
          return substr($this->redirectURL . $queryString, 0, -1);
      }
 
+     /**
+      * This method is deprecated. Merchant should generate their own transaction reference.
+      */
      private function generateTransactionReference()
      {
          $length = 6;

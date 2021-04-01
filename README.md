@@ -39,7 +39,7 @@ The payment flow is described below:
     - The user selects a bank
     - A USSD code is generated 
     - User types the USSD code on their mobile device and follows the prompt. 
-- **Verve Wallet:** The user can login to their verve wallet if they have one
+- **Verve Wallet:** The user can login to their verve wallet if they have one.
 3. The user gets a prompt indicating a successful or a failed transaction.
 
 ## Usage
@@ -69,7 +69,7 @@ INTERSWITCH_MERCHANT_CODE=
 The specified value indicates the url the user is redirected to after every transaction.  
 Don't forget to add this route in your project.   
 The route is to make a call to the **getTransactionResponse()** method.  
-The method makes use of the *Interswitch* facade.  
+The method makes use of the **Interswitch** facade.  
 Add the facade to the top of your route file like so:  
 
 ```php
@@ -94,7 +94,7 @@ You only need to make a call to the **getTransactionResponse()** right in a meth
 To get your **INTERSWITCH_PAY_ITEM_ID** and **INTERSWITCH_MERCHANT_CODE**,
 visit https://business.quickteller.com/developertools
 
-
+### Test Environment ###
 #### Create payment route and view
 Create your payment route in web.php. Something like: 
 ```php

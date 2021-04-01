@@ -9,6 +9,7 @@
  use App\Http\Controllers\Controller;
  use Illuminate\Http\Request;
  use Illuminate\Support\Facades\Validator;
+ use Illuminate\Support\Facades\Redirect;
  use Interswitch\Interswitch\Facades\Interswitch;
 
  class InterswitchController extends Controller
@@ -48,8 +49,8 @@
              'merchantReference' => $response['MerchantReference'],
          ];
 
-         $redirectURL = Interswitch::attachQueryString($rebuiltResponse);
+         //  $redirectURL = Interswitch::attachQueryString($rebuiltResponse);
 
-         return redirect()->to($redirectURL);
+         return redirect(config('interswitch.redirectURL'))->with(['transactionData' => $rebuiltResponse]);
      }
  }

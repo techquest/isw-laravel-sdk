@@ -126,6 +126,11 @@
          return $response;
      }
 
+
+     /**
+      * This method is deprecated. It was used when the final response was
+      * in form a query string.
+      */
      public function attachQueryString($rebuiltResponse)
      {
          $queryString = '/?';

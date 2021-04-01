@@ -7,5 +7,5 @@
 Route::group(['namespace' => 'Interswitch\Interswitch\Http\Controllers'], function () {
     Route::post('/interswitch-pay', 'InterswitchController@pay');
 
-    Route::post('/interswitch-callback', 'InterswitchController@callback');
+    Route::post('/interswitch-callback', 'InterswitchController@callback')->middleware('web');
 });

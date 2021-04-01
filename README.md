@@ -160,19 +160,6 @@ merchantReference: "y84KWu1617176725"
 - To get a list of test cards, visit:
  https://developer.interswitch.com/docs/quickteller-business/web-integrations/#test-cards
 
-#### Supported parameters ####
-Below is a list of all the supported parameters. These parameters can be added in your form:
-
-| Parameters           | Data Type                 | Required | Description                                                                                                                                                                                                                                         |
-|----------------------|---------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| customerEmail        | string                    | true     | The email of the person making the payment.                                                                                                                                                                                                         |
-| amount               | string                    | true     | The cost of the item being paid for in kobo.                                                                                                                                                                                                        |
-| transactionReference | string                    | false    | This is a unique reference string required for every transaction. The package generates this automatically. If you will like to generate yours, you can add the field and create your custom method for generating a custom string per transaction. |
-| currency             | string                    | false    | The ISO code of the currency being used. If this field is not added, the currency naira is assumed.                                                                                                                                                 |
-| customerName         | string                    | false    | The name of the person making the payment.                                                                                                                                                                                                          |
-| customerID           | string                    | false    | The ID of the person making the payment.                                                                                                                                                                                                            |
-|payItemName            | string                    | false   | The name of the item being paid for. |
-| tokeniseCard         | string("true" or "false") | false    | Flag to indicate whether you want the customer's card to be tokenised, a tokenised value would be returned when you requery to confrim the transaction status.                                                                                      |                                                                                     |
 
 #### Handling the Response ####
 For integrity purpose, a server side request is needed to get the final status of a transaction before giving value. The package already handles this.

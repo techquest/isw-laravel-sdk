@@ -7,5 +7,6 @@
 Route::group(['namespace' => 'Interswitch\Interswitch\Http\Controllers'], function () {
     Route::post('/interswitch-pay', 'InterswitchController@pay');
 
-    Route::post('/interswitch-callback', 'InterswitchController@callback')->middleware('web');
+    
+    Route::post('/interswitch-callback', 'InterswitchController@callback')->middleware('web')->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);
 });

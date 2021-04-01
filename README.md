@@ -123,7 +123,7 @@ Below is a list of all the supported parameters. These parameters can be added i
 | customerID           | string                    | false    | The ID of the person making the payment.                                                                                                                                                                                                            |
 |payItemName            | string                    | false   | The name of the item being paid for. |                                                                                   |                                                                                     |
 
-#### Futher Steps: ####
+#### Further Steps: ####
 - Navigate to your newly created route, click the 'Pay Now' button and follow the required steps. 
 - Note that the form is submitted to the route 'interswitch-pay', this is predefined in the package. All the fields are required. 
 - On clicking the 'Pay Now' button, the user is redirected to interswitch's payment page. Choose a payment option and follow the steps. 

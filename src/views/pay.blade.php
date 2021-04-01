@@ -14,19 +14,19 @@
 <body onload="document.interswitchForm.submit()">
     <form action="{{ $transactionData['initializationURL'] }}" method="post" name="interswitchForm"
         style="display:none">
-        <input name="site_redirect_url" value="{{ $transactionData['callbackURL'] }}" />
-        <input name="pay_item_id" value="{{ $transactionData['payItemID'] }}" />
-        <input name="txn_ref" value="{{ $transactionData['transactionReference'] }}" />
-        <input name="amount" value="{{ $transactionData['amount'] }}" />
-        <input name="currency" value="{{ $transactionData['currency'] }}" />
-        <input name="cust_name" value="{{ $transactionData['customerName'] }}" />
-        <input name="cust_email" value="{{ $transactionData['customerEmail'] }}" />
-        <input name="cust_id" value="{{ $transactionData['customerID'] }}" />
-        <input name="pay_item_name" value="{{ $transactionData['payItemName'] }}" />
-        <input name="merchant_code" value="{{ $transactionData['merchantCode'] }}" />
-        <input name="tokenise_card" value="{{ $transactionData['tokeniseCard'] }}" />
+        <input name="site_redirect_url" value="{{ $transactionData['callbackURL'] }}" type="hidden" />
+        <input name="pay_item_id" value="{{ $transactionData['payItemID'] }}" type="hidden" />
+        <input name="txn_ref" value="{{ $transactionData['transactionReference'] }}" type="hidden" />
+        <input name="amount" value="{{ $transactionData['amount'] }}" type="hidden" />
+        <input name="currency" value="{{ $transactionData['currency'] }}" type="hidden" />
+        <input name="cust_name" value="{{ $transactionData['customerName'] }}" type="hidden" />
+        <input name="cust_email" value="{{ $transactionData['customerEmail'] }}" type="hidden" />
+        <input name="cust_id" value="{{ $transactionData['customerID'] }}" type="hidden" />
+        <input name="pay_item_name" value="{{ $transactionData['payItemName'] }}" type="hidden" />
+        <input name="merchant_code" value="{{ $transactionData['merchantCode'] }}" type="hidden" />
+        <input name="tokenise_card" value="{{ $transactionData['tokeniseCard'] }}" type="hidden" />
         <!-- <input name="access_token" value="{{ $transactionData['accessToken'] }}" /> -->
-        <input name="display_mode" value="PAGE" />
+        <input name="display_mode" value="PAGE" type="hidden" />
     </form>
 </body>
 

@@ -95,7 +95,7 @@ To get your **INTERSWITCH_PAY_ITEM_ID** and **INTERSWITCH_MERCHANT_CODE**,
 visit https://business.quickteller.com/developertools
 
 ### Test Environment ###
-#### Create payment route and view
+#### - Create payment route and view
 Create your payment route in web.php. Something like: 
 ```php
 Route::get('pay', function(){
@@ -126,7 +126,7 @@ The view can be like so:
 ```
 **Note: 'amount' field must be in kobo**
 
-#### Supported parameters ####
+#### - Supported parameters ####
 Below is a list of all the supported parameters. These parameters can be added in your form:
 
 | Parameters           | Data Type                 | Required | Description                                                                                                                                                                                                                                         |
@@ -139,7 +139,7 @@ Below is a list of all the supported parameters. These parameters can be added i
 | customerID           | string                    | false    | The ID of the person making the payment.                                                                                                                                                                                                            |
 |payItemName            | string                    | false   | The name of the item being paid for. |                                                                                   |                                                                                     |
 
-#### Further Steps: ####
+#### - Further Steps: ####
 - Navigate to your newly created route, click the 'Pay Now' button and follow the required steps. 
 - Note that the form is submitted to the route 'interswitch-pay', this is predefined in the package. All the fields are required. 
 - On clicking the 'Pay Now' button, the user is redirected to interswitch's payment page. Choose a payment option and follow the steps. 
@@ -161,7 +161,7 @@ merchantReference: "y84KWu1617176725"
  https://developer.interswitch.com/docs/quickteller-business/web-integrations/#test-cards
 
 
-#### Handling the Response ####
+#### - Handling the Response ####
 For integrity purpose, a server side request is needed to get the final status of a transaction before giving value. The package already handles this.
 
 After a transaction is completed, a request is made to the 'transaction requery' endpoint (/collections/api/v1/gettransaction.json).

@@ -110,6 +110,19 @@ The view can be like so:
 ```
 **Note: 'amount' field must be in kobo**
 
+#### Supported parameters ####
+Below is a list of all the supported parameters. These parameters can be added in your form:
+
+| Parameters           | Data Type                 | Required | Description                                                                                                                                                                                                                                         |
+|----------------------|---------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| customerEmail        | string                    | true     | The email of the person making the payment.                                                                                                                                                                                                         |
+| amount               | string                    | true     | The cost of the item being paid for in kobo.                                                                                                                                                                                                        |
+| transactionReference | string                    | true    | This is a unique reference string required for every transaction. The package generates this automatically. If you will like to generate yours, you can add the field and create your custom method for generating a custom string per transaction. |
+| currency             | string                    | false    | The ISO code of the currency being used. If this field is not added, the currency naira is assumed.                                                                                                                                                 |
+| customerName         | string                    | false    | The name of the person making the payment.                                                                                                                                                                                                          |
+| customerID           | string                    | false    | The ID of the person making the payment.                                                                                                                                                                                                            |
+|payItemName            | string                    | false   | The name of the item being paid for. |                                                                                   |                                                                                     |
+
 #### Futher Steps: ####
 - Navigate to your newly created route, click the 'Pay Now' button and follow the required steps. 
 - Note that the form is submitted to the route 'interswitch-pay', this is predefined in the package. All the fields are required. 

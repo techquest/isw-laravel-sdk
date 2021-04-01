@@ -67,13 +67,29 @@ INTERSWITCH_MERCHANT_CODE=
 ```
 'response' as indicated above could be anything. 
 The specified value indicates the url the user is redirected to after every transaction.
-Don't forget to add this route in your project. In this case, it will be:
+Don't forget to add this route in your project. 
+The route is to make a call to the **getTransactionResponse()** method.
+The method makes use of the *Interswitch* facade.
+Add the facade to the top of your route file like so:
+
+```php
+use Interswitch\Interswitch\Facades\Interswitch;
+```
+
+You can hence define your response route like so:
 ```php
  Route::get('response', function(){
-  return Session::get('transactionData');
+  return Interswitch::getTransactionResponse(); 
  });
 ```
+Remember you can define your own route, provided it is defined in .env.
+'response' as used above is for demonstration use only.
 The details of the transaction is returned as a flash message.
+You can of course, decide to handle the response with a controller.
+You only need to make a call to the **getTransactionResponse()** right in a method in your controller
+
+
+
 
 To get your **INTERSWITCH_PAY_ITEM_ID** and **INTERSWITCH_MERCHANT_CODE**,
 visit https://business.quickteller.com/developertools
@@ -189,7 +205,7 @@ merchantReference: "y84KWu1617176725"
 There are quite a number of response codes that can be returned, the full list can be viewed [here](https://sandbox.interswitchng.com/docbase/docs/webpay/response-codes/)
 ### Live Environment
 **To go live,** 
-- switch to the live environment on your Quickteller Business dashboard by clicking the 'switch' button at the top right corner of the dashboard. 
+- Switch to the live environment on your Quickteller Business dashboard by clicking the 'switch' button at the top right corner of the dashboard. 
 - Replace **INTERSWITCH_PAY_ITEM_ID** and **INTERSWITCH_MERCHANT_CODE** with the new values. 
 - Also add the following to **.env**:
 ```php

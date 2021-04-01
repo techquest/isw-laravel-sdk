@@ -126,6 +126,11 @@
          return $response;
      }
 
+     public function getTransactionResponse()
+     {
+         return \Illuminate\Support\Facades\Session::get('transactionData');
+     }
+
 
      /**
       * This method is deprecated. It was used when the final response was

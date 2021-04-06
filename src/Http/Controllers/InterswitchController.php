@@ -39,18 +39,17 @@
 
      public function callback()
      {
-         $response = Interswitch::queryTransaction($_POST);
          $rebuiltResponse = [
-             'paymentReference' => $response['PaymentReference'],
-             'responseCode' => $response['ResponseCode'],
-             'responseDescription' => $response['ResponseDescription'],
-             'amount' => $response['Amount'],
-             'transactionDate' => $response['TransactionDate'],
-             'merchantReference' => $response['MerchantReference'],
+            'transactionReference' => $_POST['txnref'],
+            'responseCode' => $_POST['resp'],
+            'responseDescription' => $_POST['desc'],
+            'paymentReference' => $_POST['payRef'],
+            'returnedReference' => $_POST['retRef'],
+            'cardNumber' => $_POST['cardNum'],
+            'approvedAmount' => $_POST['apprAmt'],
+            'amount' => $_POST['amount'],
+            'mac' => $_POST['mac']
          ];
-
-         //  $redirectURL = Interswitch::attachQueryString($rebuiltResponse);
-
          return redirect(config('interswitch.redirectURL'))->with(['transactionData' => $rebuiltResponse]);
      }
  }

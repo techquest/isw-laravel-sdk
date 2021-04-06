@@ -6,6 +6,8 @@
 
  namespace Interswitch\Interswitch;
 
+ use Interswitch\Interswitch\Exceptions\ConfirmTransactionException;
+
  class Interswitch
  {
      /**
@@ -97,11 +99,32 @@
          return $transactionData;
      }
 
-     public function queryTransaction($transactionDetails)
+
+     /**
+      * Overload the 'confirmTransaction' method.
+      */
+     public function __call($name, $arg)
+     {
+         if ($name == 'confirmTransaction') {
+             switch (count($arg)) {
+                case 0:
+                    return $this->getTransactionResponse();
+                
+                case 2:
+                    return $this->requeryTransaction($arg[0], $arg[1]);
+
+                default:
+                    throw new ConfirmTransactionException("Wrong implemention of the method ConfirmTransaction");
+
+             }
+         }
+     }
+
+     public function requeryTransaction($transactionReference, $amount)
      {
          $queryString = '?merchantcode=' . $this->merchantCode .
-                            '&transactionreference=' . $transactionDetails['txnref'] .
-                            '&amount=' . $transactionDetails['amount'];
+                            '&transactionreference=' . $transactionReference .
+                            '&amount=' . $amount;
                             
          $this->transactionStatusURL = $this->initializationBaseURL .
                                         '/collections/api/v1/gettransaction.json' . $queryString;
@@ -123,7 +146,17 @@
          ));
        
          $response = json_decode(curl_exec($curl), true);
-         return $response;
+
+         $rebuiltResponse = [
+            'paymentReference' => $response['PaymentReference'],
+            'responseCode' => $response['ResponseCode'],
+            'responseDescription' => $response['ResponseDescription'],
+            'amount' => $response['Amount'],
+            'transactionDate' => $response['TransactionDate'],
+            'merchantReference' => $response['MerchantReference'],
+        ];
+
+         return $rebuiltResponse;
      }
 
      public function getTransactionResponse()

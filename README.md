@@ -80,7 +80,7 @@ Interswitch::confirmTransaction();
 To get your **INTERSWITCH_PAY_ITEM_ID** and **INTERSWITCH_MERCHANT_CODE**,
 visit https://business.quickteller.com/developertools
 
-### Test Environment ###
+### Sample Payment Form ###
 #### - Create Payment View
 Create your view like so:  
 NOTE: The form must be submitted to **interswitch-pay** using post method.

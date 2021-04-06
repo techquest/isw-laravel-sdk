@@ -162,12 +162,12 @@ Consider the sample response below:
 
 ```php
 {
-paymentReference: "FBN|WEB|MX26070|31-03-2021|3511400|927085",
-responseCode: "00",
-responseDescription: "Approved by Financial Institution",
-amount: "15000",
-transactionDate: "2021-03-31T08:45:31",
-merchantReference: "y84KWu1617176725"
+"paymentReference": "FBN|WEB|MX26070|31-03-2021|3511400|927085",
+"responseCode": "00",
+"responseDescription": "Approved by Financial Institution",
+"amount": "15000",
+"transactionDate": "2021-03-31T08:45:31",
+"merchantReference": "y84KWu1617176725"
 }
 ```
 Below is a description of the response keys:

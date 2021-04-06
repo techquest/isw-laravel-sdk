@@ -66,14 +66,14 @@ INTERSWITCH_PAY_ITEM_ID=
 INTERSWITCH_MERCHANT_CODE= 
 ```
 The **INTERSWITCH_REDIRECT_URL** is the endpoint you will like to get the status of a transaction.
-Also define this route in your route file and make a call to **confirmPayment()** like so:
+Also define this route in your route file and make a call to **confirmTransaction()** like so:
 
 ```php
 use Interswitch\Interswitch\Facades\Interswitch;
 
 ...
 
-Interswitch::confirmPayment();
+Interswitch::confirmTransaction();
 ```
 
 
@@ -82,7 +82,7 @@ visit https://business.quickteller.com/developertools
 
 ### Test Environment ###
 #### - Create Payment View
-Create your view like so:
+Create your view like so:  
 NOTE: The form must be submitted to **interswitch-pay** using post method.
 ```html
 <form action="interswitch-pay" method="post">
@@ -122,21 +122,21 @@ Below is a list of all the supported parameters. These parameters can be added i
 
 #### - Further Steps: ####
 - Click the 'Pay Now' button and follow the required steps. 
-- Note that the form is submitted to the route 'interswitch-pay', this is predefined in the package. All the fields are required. 
+- Note that the form is submitted to the route 'interswitch-pay', this is predefined in the package.
 - On clicking the 'Pay Now' button, the user is redirected to interswitch's payment page. Choose a payment option and follow the steps. 
 - The user is then redirected back to your website as indicated by 'INTERSWITCH_REDIRECT_URL'.
 - This url will return the result of the transaction. Sample response will be like so:
 ```php
 {
-transactionReference: "y84KWu1617176725",
-responseCode: "00",
-responseDescription: "Approved by Financial Institution",
-paymentReference: "FBN|WEB|MX26070|31-03-2021|3511400|927085",
-returnedReference: "1287984345",
-cardNumber: "",
-approvedAmount: "15000",
-amount: "15000",
-mac: ""
+"transactionReference": "y84KWu1617176725",
+"responseCode": "00",
+"responseDescription": "Approved by Financial Institution",
+"paymentReference": "FBN|WEB|MX26070|31-03-2021|3511400|927085",
+"returnedReference": "1287984345",
+"cardNumber": "",
+"approvedAmount": "15000",
+"amount": "15000",
+"mac": ""
 }
 ```
 #### Note: #### 
@@ -147,14 +147,14 @@ mac: ""
 
 #### - Handling the Response ####
 For integrity purpose, you need to make a server side request to get the final status of a transaction before giving value.
-To do this, make a call to **confirmPayment(transactionReference, amount)** while passing the transaction reference and amount as parameters like so:
+To do this, make a call to **confirmTransaction(transactionReference, amount)** like so:
 
 ```php
 use Interswitch\Interswitch\Facades\Interswitch;
 
 ...
 
-Interswitch::confirmPayment(transactionReference, amount);
+Interswitch::confirmTransaction(transactionReference, amount);
 ```
 
 It returns a JSON object containing the status of the transaction.

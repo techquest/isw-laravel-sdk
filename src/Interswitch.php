@@ -122,6 +122,7 @@
 
      public function requeryTransaction($transactionReference, $amount)
      {
+         $rebuiltResponse = [];
          $queryString = '?merchantcode=' . $this->merchantCode .
                             '&transactionreference=' . $transactionReference .
                             '&amount=' . $amount;
@@ -147,15 +148,23 @@
        
          $response = json_decode(curl_exec($curl), true);
 
-         $rebuiltResponse = [
-            'paymentReference' => $response['PaymentReference'],
-            'responseCode' => $response['ResponseCode'],
-            'responseDescription' => $response['ResponseDescription'],
-            'amount' => $response['Amount'],
-            'transactionDate' => $response['TransactionDate'],
-            'merchantReference' => $response['MerchantReference'],
-        ];
-
+         if ($response['ResponseCode'] == '00') {
+             $rebuiltResponse = [
+                'paymentReference' => $response['PaymentReference'],
+                'responseCode' => $response['ResponseCode'],
+                'responseDescription' => $response['ResponseDescription'],
+                'amount' => $response['Amount'],
+                'transactionDate' => $response['TransactionDate'],
+                'merchantReference' => $response['MerchantReference'],
+            ];
+         } else {
+             $rebuiltResponse = [
+                'amount' => $response['Amount'],
+                'responseCode' => $response['ResponseCode'],
+                'responseDescription' => $response['ResponseDescription']
+            ];
+         }
+        
          return $rebuiltResponse;
      }
 

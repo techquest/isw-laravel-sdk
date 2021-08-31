@@ -11,7 +11,7 @@ To begin, create an account at https://business.quickteller.com if you haven't a
 
 [PHP](https://php.net) 7.2+ and [Composer](https://getcomposer.org) are required.
 
-To get the latest version of Laravel Interswitch, simply require it
+To get the latest version of Laravel Interswitch, simply require it like so:
 
 ```bash
 composer require interswitch/laravel-interswitch

@@ -59,6 +59,15 @@
       */
      private $merchantCode;
 
+     /**
+      * Client Key can be gotten from the quickteller business dashboard
+      */
+     private $clientKey;
+
+     /**
+      * Secret can be gotten from the quickteller business dashboard
+      */
+     private $secret;
 
      public function __construct()
      {
@@ -72,6 +81,9 @@
          $this->initializationURL = $this->initializationBaseURL . '/collections/w/pay';
          $this->payItemID = config('interswitch.payItemID');
          $this->merchantCode = config('interswitch.merchantCode');
+         $this->clientKey = config('interswitch.clientKey');
+         $this->secret = config('interswitch.secret');
+
      }
 
      /**
@@ -142,7 +154,8 @@
          CURLOPT_HTTPHEADER => [
              "content-type: application/json",
              "cache-control: no-cache",
-             "Connection: keep-alive"
+             "Connection: keep-alive",
+             "Authorisation: Basic " . base64_encode($this->clientKey . ":" . $this->secret),
              ],
          ));
        

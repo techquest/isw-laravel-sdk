@@ -24,6 +24,16 @@
       /**
        * Merchant Code has gotten from the Quickteller Business dashboard
        */
-      'merchantCode' => env('INTERSWITCH_MERCHANT_CODE')
+      'merchantCode' => env('INTERSWITCH_MERCHANT_CODE'),
+
+      /**
+       * Client Key as gotten from the Quickteller Business dashboard
+       */
+      'clientKey' => env('INTERSWITCH_ClIENT_KEY'),
+
+      /**
+       * Secret as gotten from the Quickteller Business dashboard
+       */
+      'secret' => env('INTERSWITCH_SECRET')
 
  ];
